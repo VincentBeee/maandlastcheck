@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studielast Calculator 2025 — DUO terugbetaling berekenen | MaandlastCheck</title>
+  <meta name="description" content="Bereken je maandelijkse DUO-terugbetaling op basis van je inkomen en studieschuld. Draagkrachttoets, restschuld en effect op hypotheek. Gratis en zonder registratie.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maandlastcheck.nl/tools/studielast-calculator.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Studielast Calculator 2025 — DUO terugbetaling",
+    "description": "Bereken je maandelijkse DUO-terugbetaling op basis van draagkracht, studieschuld en inkomen.",
+    "url": "https://maandlastcheck.nl/tools/studielast-calculator.html",
+    "isPartOf": { "@type": "WebSite", "name": "MaandlastCheck", "url": "https://maandlastcheck.nl" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">Maandlast<span>Check</span></a>
+      <nav>
+        <a href="/tools/netto-salaris-calculator.html">Netto salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Hypotheek</a>
+        <a href="/tools/studielast-calculator.html">Studielast</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="container">
+
+      <div class="tool-page__header">
+        <div class="tool-page__breadcrumb">
+          <a href="/">MaandlastCheck</a> › Studielast Calculator
+        </div>
+        <h1 class="tool-page__title">Studielast Calculator 2025</h1>
+        <p class="tool-page__subtitle">Hoeveel betaal je per maand terug aan DUO? Bereken je maandlast op basis van draagkracht, inclusief effect op je maximale hypotheek.</p>
+      </div>
+
+      <!-- Ad slot top -->
+      <div class="ad-slot" style="padding: 0 0 24px 0; justify-content: flex-start;">
+        <!-- ADVERTENTIE -->
+      </div>
+
+      <div class="tool-layout">
+
+        <!-- INPUT CARD -->
+        <div class="calc-card">
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Jouw studieschuld</div>
+
+            <div class="form-group">
+              <label for="schuld">Studieschuld bij DUO</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">€</span>
+                <input type="number" id="schuld" value="25000" min="0" max="150000" step="500">
+              </div>
+              <div class="hint">Het totale openstaande bedrag bij DUO.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="stelsel">Stelsel</label>
+              <select id="stelsel">
+                <option value="nieuw" selected>Nieuw stelsel (HBO/WO vanaf sept 2015)</option>
+                <option value="oud">Oud stelsel (vóór sept 2015)</option>
+              </select>
+              <div class="hint">Nieuw stelsel: 35 jaar terugbetalen. Oud stelsel: 15 jaar.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="rente">Rente (% per jaar)</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">%</span>
+                <input type="number" id="rente" value="2.56" min="0" max="10" step="0.01" style="padding-left: 30px;">
+              </div>
+              <div class="hint">Nieuw stelsel 2025: 2,56% — Oud stelsel 2025: 0,46%</div>
+            </div>
+          </div>
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Jouw situatie</div>
+
+            <div class="form-group">
+              <label for="inkomen">Bruto jaarinkomen</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">€</span>
+                <input type="number" id="inkomen" value="40000" min="0" max="500000" step="500">
+              </div>
+              <div class="hint">DUO berekent je draagkracht op basis van je inkomen.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="partner">Leefsituatie</label>
+              <select id="partner">
+                <option value="single" selected>Alleenstaand</option>
+                <option value="partner">Met toeslagpartner</option>
+              </select>
+              <div class="hint">Met partner ligt de inkomensdrempel hoger.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RESULTS -->
+        <div>
+          <div class="results-card" id="results-panel">
+            <div class="results-main-label">Maandlast DUO</div>
+            <div class="results-main-value" id="res-maandlast">—</div>
+
+            <div class="results-breakdown">
+              <div class="result-line">
+                <span class="result-line__label">Draagkracht maandlast</span>
+                <span class="result-line__value" id="res-draagkracht">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Annuïteit (max. maandlast)</span>
+                <span class="result-line__value" id="res-annuiteit">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Terugbetalingstermijn</span>
+                <span class="result-line__value" id="res-termijn">—</span>
+              </div>
+              <div class="result-line result-line--subtotal">
+                <span class="result-line__label">Totaal te betalen</span>
+                <span class="result-line__value" id="res-totaal">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Restschuld na afloop</span>
+                <span class="result-line__value" id="res-restschuld">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Effect op hypotheek</span>
+                <span class="result-line__value" id="res-hypotheek">—</span>
+              </div>
+            </div>
+
+            <p class="results-disclaimer">Indicatieve berekening o.b.v. DUO-systematiek 2025. Raadpleeg DUO of een financieel adviseur voor je persoonlijke situatie.</p>
+          </div>
+        </div>
+
+      </div><!-- /tool-layout -->
+
+      <!-- SEO content -->
+      <div class="tool-info">
+        <h2>Hoe werkt de DUO draagkrachttoets?</h2>
+        <p>DUO berekent je maandelijkse terugbetaling op basis van je <strong>draagkracht</strong>: 4% van je jaarinkomen boven een drempelbedrag, gedeeld door 12 maanden. In 2025 ligt dat drempelbedrag voor alleenstaanden op circa €22.600 bruto per jaar. Verdien je minder? Dan hoef je tijdelijk niets terug te betalen.</p>
+
+        <h3>Oud stelsel vs. nieuw stelsel</h3>
+        <p>Studeer je voor september 2015 begonnen aan een HBO- of WO-opleiding? Dan val je onder het <strong>oud stelsel</strong> met een terugbetalingstermijn van 15 jaar en een lage rente (2025: 0,46%). Ben je na september 2015 begonnen? Dan geldt het <strong>nieuw stelsel</strong> met 35 jaar terugbetalen en een rente van 2,56% in 2025.</p>
+
+        <h3>Restschuld en kwijtschelding</h3>
+        <p>Als je maandelijkse draagkrachtbetaling lager is dan de volledige annuïteit, bouw je niet snel genoeg af om de schuld binnen de termijn te voldoen. DUO scheldt de resterende schuld na afloop van de terugbetalingstermijn kwijt. Dit geldt ook wanneer je jarenlang niets betaalt door een laag inkomen.</p>
+
+        <h3>Effect op je maximale hypotheek</h3>
+        <p>Een studieschuld verlaagt je maximale hypotheek. Hypotheekverstrekkers hanteren de <strong>DUO-toetsregel</strong>: 0,75% van je oorspronkelijke studieschuld per jaar wordt als fictieve maandlast meegenomen. Bij een schuld van €30.000 is dat €225 per maand, wat je hypotheekruimte met ruwweg €40.000–50.000 verlaagt. Gebruik onze <a href="/tools/maximale-hypotheek-calculator.html">hypotheekcalculator</a> om het gecombineerde effect te zien.</p>
+
+        <h3>Wat is de DUO-rente in 2025?</h3>
+        <p>De DUO-rente wordt jaarlijks vastgesteld op basis van de gemiddelde rente op staatsobligaties. Voor 2025 is de rente voor het nieuw stelsel vastgesteld op <strong>2,56%</strong>. Het oud stelsel heeft een lagere rente van <strong>0,46%</strong> in 2025. Beide tarieven kun je in de calculator handmatig aanpassen.</p>
+
+        <h3>Veelgestelde vragen over DUO-terugbetaling</h3>
+        <p>Hoe weet ik hoeveel ik heb geleend? DUO stuurt na afstuderen een overzicht van je totale schuld en stelt een terugbetalingsplan op. Je kunt altijd vrijwillig meer terugbetalen dan de draagkrachtbetaling — dit versnelt aflossing en vermindert de totale rentekosten.</p>
+      </div>
+
+      <!-- Ad slot bottom -->
+      <div class="ad-slot" style="padding: 24px 0 0 0; justify-content: flex-start;">
+        <!-- ADVERTENTIE -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-left">
+        <strong>MaandlastCheck.nl</strong>
+        <p>Onafhankelijke financiële calculators voor Nederland.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="/tools/netto-salaris-calculator.html">Netto Salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Maximale Hypotheek</a>
+        <a href="/tools/studielast-calculator.html">Studielast DUO</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </nav>
+      <p class="footer-legal">© 2025 MaandlastCheck.nl — Berekeningen zijn indicatief. Geen financieel advies.</p>
+    </div>
+  </footer>
+
+  <script src="../js/studielast.js"></script>
+</body>
+</html>
