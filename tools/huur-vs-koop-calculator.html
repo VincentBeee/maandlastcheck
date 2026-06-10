@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huur vs. Koop Vergelijker 2025 — Wat is slimmer? | MaandlastCheck</title>
+  <meta name="description" content="Bereken of huren of kopen financieel slimmer is in jouw situatie. Vergelijk nettovermogen na 5, 10 of 20 jaar op basis van woningprijs, hypotheek, huur en beleggingsrendement.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maandlastcheck.nl/tools/huur-vs-koop-calculator.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Huur vs. Koop Vergelijker 2025",
+    "description": "Bereken of huren of kopen financieel slimmer is. Vergelijk nettovermogen op basis van woningprijs, hypotheek en beleggingsrendement.",
+    "url": "https://maandlastcheck.nl/tools/huur-vs-koop-calculator.html",
+    "isPartOf": { "@type": "WebSite", "name": "MaandlastCheck", "url": "https://maandlastcheck.nl" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">Maandlast<span>Check</span></a>
+      <nav>
+        <a href="/tools/netto-salaris-calculator.html">Netto salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Hypotheek</a>
+        <a href="/tools/studielast-calculator.html">Studielast</a>
+        <a href="/tools/huur-vs-koop-calculator.html">Huur vs. koop</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="container">
+
+      <div class="tool-page__header">
+        <div class="tool-page__breadcrumb">
+          <a href="/">MaandlastCheck</a> › Huur vs. Koop Vergelijker
+        </div>
+        <h1 class="tool-page__title">Huur vs. Koop Vergelijker 2025</h1>
+        <p class="tool-page__subtitle">Huren of kopen — wat levert meer op? Vergelijk je nettovermogen na een zelfgekozen periode op basis van jouw situatie.</p>
+      </div>
+
+      <!-- Ad slot top -->
+      <div class="ad-slot" style="padding: 0 0 24px 0; justify-content: flex-start;">
+        <!-- ADVERTENTIE -->
+      </div>
+
+      <div class="tool-layout">
+
+        <!-- INPUT CARD -->
+        <div class="calc-card">
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Koopwoning</div>
+
+            <div class="form-group">
+              <label for="woningprijs">Aankoopprijs woning</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">€</span>
+                <input type="number" id="woningprijs" value="350000" min="50000" max="2000000" step="5000">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="eigen-inbreng">Eigen inbreng</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">€</span>
+                <input type="number" id="eigen-inbreng" value="35000" min="0" max="2000000" step="1000">
+              </div>
+              <div class="hint">Aanbetaling + spaargeld dat je inbrengt.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="rente">Hypotheekrente (% per jaar)</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">%</span>
+                <input type="number" id="rente" value="4.0" min="1" max="12" step="0.1" style="padding-left: 30px;">
+              </div>
+              <div class="hint">Actuele 10-jaar vast: ca. 4,0–4,5%</div>
+            </div>
+
+            <div class="form-group">
+              <label for="looptijd">Looptijd hypotheek</label>
+              <select id="looptijd">
+                <option value="30" selected>30 jaar</option>
+                <option value="25">25 jaar</option>
+                <option value="20">20 jaar</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="waardestijging">Verwachte waardestijging (% per jaar)</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">%</span>
+                <input type="number" id="waardestijging" value="2.5" min="-5" max="15" step="0.5" style="padding-left: 30px;">
+              </div>
+              <div class="hint">Historisch gemiddelde NL: ca. 2–3% per jaar.</div>
+            </div>
+
+            <div class="toggle-row">
+              <label for="starter">Startersvrijstelling (≤ €510.000)</label>
+              <label class="toggle">
+                <input type="checkbox" id="starter" checked>
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Huurwoning</div>
+
+            <div class="form-group">
+              <label for="huur-maand">Huurprijs per maand</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">€</span>
+                <input type="number" id="huur-maand" value="1400" min="100" max="10000" step="50">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="huurstijging">Jaarlijkse huurstijging (%)</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">%</span>
+                <input type="number" id="huurstijging" value="3.5" min="0" max="15" step="0.5" style="padding-left: 30px;">
+              </div>
+              <div class="hint">Geliberaliseerde sector: vrij. Sociale sector: gemaximeerd.</div>
+            </div>
+          </div>
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Vergelijking</div>
+
+            <div class="form-group">
+              <label for="horizon">Tijdshorizon</label>
+              <select id="horizon">
+                <option value="5">5 jaar</option>
+                <option value="10" selected>10 jaar</option>
+                <option value="15">15 jaar</option>
+                <option value="20">20 jaar</option>
+                <option value="30">30 jaar</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="beleggingsrendement">Beleggingsrendement huurder (% per jaar)</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">%</span>
+                <input type="number" id="beleggingsrendement" value="6.0" min="0" max="20" step="0.5" style="padding-left: 30px;">
+              </div>
+              <div class="hint">Huurder belegt eigen inbreng + maandelijks verschil. Wereld-indexfonds: ca. 6–7%.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RESULTS -->
+        <div>
+          <div class="results-card navy" id="results-panel">
+
+            <!-- Twee-kolomsvergelijking -->
+            <div style="display:flex; gap:20px; margin-bottom:16px;">
+              <div style="flex:1;">
+                <div class="results-main-label">Kopen</div>
+                <div class="results-main-value" id="res-koop-vermogen" style="font-size:1.9rem; margin-bottom:0;">—</div>
+              </div>
+              <div style="flex:1;">
+                <div class="results-main-label">Huren</div>
+                <div class="results-main-value" id="res-huur-vermogen" style="font-size:1.9rem; margin-bottom:0;">—</div>
+              </div>
+            </div>
+
+            <!-- Winnaar -->
+            <div id="res-winner" style="font-size:0.85rem; font-weight:600; background:rgba(255,255,255,0.15); border-radius:8px; padding:8px 14px; margin-bottom:20px;">—</div>
+
+            <div class="results-breakdown">
+
+              <div class="result-line" style="font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;opacity:0.6;border-bottom:none;padding-bottom:4px;">
+                Koopscenario
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Maandlast (hyp. + onderhoud)</span>
+                <span class="result-line__value" id="res-koop-maand">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Kosten koper (eenmalig)</span>
+                <span class="result-line__value" id="res-kosten-koper">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Woningwaarde na <span class="horizon-label">10</span> jaar</span>
+                <span class="result-line__value" id="res-woningwaarde">—</span>
+              </div>
+              <div class="result-line result-line--subtotal">
+                <span class="result-line__label">Restschuld</span>
+                <span class="result-line__value" id="res-restschuld">—</span>
+              </div>
+
+              <div class="result-line" style="font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;opacity:0.6;border-bottom:none;padding-top:16px;padding-bottom:4px;margin-top:8px;">
+                Huurscenario
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Huurprijs nu</span>
+                <span class="result-line__value" id="res-huur-start">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Huurprijs na <span class="horizon-label">10</span> jaar</span>
+                <span class="result-line__value" id="res-huur-einde">—</span>
+              </div>
+              <div class="result-line result-line--subtotal">
+                <span class="result-line__label">Beleggingsportfolio</span>
+                <span class="result-line__value" id="res-portfolio">—</span>
+              </div>
+
+            </div>
+
+            <p class="results-disclaimer">Hypotheekrenteaftrek niet meegenomen. Beleggingsrendement is geen garantie. Indicatieve vergelijking — geen financieel advies.</p>
+          </div>
+        </div>
+
+      </div><!-- /tool-layout -->
+
+      <!-- SEO content -->
+      <div class="tool-info">
+        <h2>Huren of kopen: wat is financieel slimmer?</h2>
+        <p>Er is geen universeel antwoord — het hangt af van jouw situatie, de tijdshorizon en aannames over woningwaardestijging en beleggingsrendement. De vergelijker berekent voor beide scenario's wat je <strong>nettovermogen</strong> is na de gekozen periode. Voor kopen is dat de woningwaarde minus de resterende hypotheekschuld. Voor huren is dat het beleggingsportfolio: je eigen inbreng plus het maandelijkse verschil in woonlasten, belegd tegen een aangenomen rendement.</p>
+
+        <h3>Hoe werkt de berekening?</h3>
+        <p>De tool vergelijkt twee mensen met dezelfde financiële uitgangspositie. <strong>Koper:</strong> betaalt eigeninbreng en kosten koper vooraf, betaalt maandelijks hypotheek en onderhoud (1% van woningwaarde per jaar), bouwt vermogen op via woningwaardestijging en aflossing. <strong>Huurder:</strong> belegt de eigen inbreng én de kosten koper direct, en investeert elke maand het verschil tussen de koopmaandlast en de huurprijs.</p>
+
+        <h3>Kosten koper</h3>
+        <p>Bij aankoop van een woning betaal je eenmalig de kosten koper: <strong>overdrachtsbelasting</strong> (2% voor niet-starters, 0% voor starters tot €510.000), notariskosten (ca. €1.500) en taxatiekosten (ca. €500). In totaal zo'n €2.000–€9.000. Dit bedrag is in de berekening als sunk cost opgenomen voor de koper, en als extra startkapitaal voor de huurder.</p>
+
+        <h3>Woningwaardestijging en tijdshorizon</h3>
+        <p>Hoe langer je horizon, hoe meer tijd de woning heeft om in waarde te stijgen en de hypotheek af te lossen. Op een horizon van 5 jaar wint huren vaak nog vanwege de hoge kosten koper en beperkte aflossing. Op 20–30 jaar keert het beeld bijna altijd ten voordele van kopen. Historisch lag de gemiddelde woningwaardestijging in Nederland rond de 2–4% per jaar, maar dit varieert sterk per regio en periode.</p>
+
+        <h3>Huurstijging in 2025</h3>
+        <p>In de vrije sector (geliberaliseerde huur) zijn verhuurders vrij in hun huurverhoging. In 2025 liggen jaarlijkse verhogingen van 3–5% voor huurprijzen boven de liberalisatiegrens (€880) voor de hand. Bij een stijgende huurlast wordt kopen relatief aantrekkelijker naarmate de tijd verstrijkt, omdat de hypotheekmaandlast bij annuïtair lenen vast blijft.</p>
+
+        <h3>Veelgestelde vragen</h3>
+        <p><strong>Is hypotheekrenteaftrek meegenomen?</strong> Nee. Hypotheekrenteaftrek verlaagt de netto maandlast voor kopers, waardoor kopen in werkelijkheid iets aantrekkelijker is dan de calculator aangeeft. Voor starters met een box-1 inkomen tot ca. €75.000 levert aftrek doorgaans 1–2% extra voordeel op de effectieve rente.</p>
+        <p><strong>Wat als de woningmarkt daalt?</strong> Pas de waardestijging aan naar 0% of negatief om te zien hoe dat uitpakt. Een daling van 10% over 5 jaar bij een hoge hypotheek kan je nettovermogen als koper sterk negatief maken.</p>
+      </div>
+
+      <!-- Ad slot bottom -->
+      <div class="ad-slot" style="padding: 24px 0 0 0; justify-content: flex-start;">
+        <!-- ADVERTENTIE -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-left">
+        <strong>MaandlastCheck.nl</strong>
+        <p>Onafhankelijke financiële calculators voor Nederland.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="/tools/netto-salaris-calculator.html">Netto Salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Maximale Hypotheek</a>
+        <a href="/tools/studielast-calculator.html">Studielast DUO</a>
+        <a href="/tools/huur-vs-koop-calculator.html">Huur vs. Koop</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </nav>
+      <p class="footer-legal">© 2025 MaandlastCheck.nl — Berekeningen zijn indicatief. Geen financieel advies.</p>
+    </div>
+  </footer>
+
+  <script src="../js/huur-vs-koop.js"></script>
+</body>
+</html>
