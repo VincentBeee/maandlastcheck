@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netto Salaris Calculator 2025 — Bruto naar netto berekenen | MaandlastCheck</title>
+  <meta name="description" content="Bereken direct je netto maandloon op basis van je bruto jaarsalaris. Bijgewerkt voor 2025 met actuele belastingtabellen, arbeidskorting en heffingskorting. Gratis en zonder registratie.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maandlastcheck.nl/tools/netto-salaris-calculator.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Netto Salaris Calculator 2025",
+    "description": "Bereken je netto maandloon op basis van je bruto jaarsalaris. Inclusief belastingen, heffingskortingen en sociale premies.",
+    "url": "https://maandlastcheck.nl/tools/netto-salaris-calculator.html",
+    "isPartOf": { "@type": "WebSite", "name": "MaandlastCheck", "url": "https://maandlastcheck.nl" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">Maandlast<span>Check</span></a>
+      <nav>
+        <a href="/tools/netto-salaris-calculator.html">Netto salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Hypotheek</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="container">
+
+      <div class="tool-page__header">
+        <div class="tool-page__breadcrumb">
+          <a href="/">MaandlastCheck</a> › Netto Salaris Calculator
+        </div>
+        <h1 class="tool-page__title">Netto Salaris Calculator 2025</h1>
+        <p class="tool-page__subtitle">Hoeveel komt er daadwerkelijk op je rekening? Vul je bruto jaarsalaris in en zie direct je netto maandloon.</p>
+      </div>
+
+      <!-- Ad slot top -->
+      <div class="ad-slot" style="padding: 0 0 24px 0; justify-content: flex-start;">
+        <!-- ADVERTENTIE -->
+      </div>
+
+      <div class="tool-layout">
+
+        <!-- INPUT CARD -->
+        <div class="calc-card">
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Jouw inkomen</div>
+
+            <div class="form-group">
+              <label for="bruto-jaar">Bruto jaarsalaris</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">€</span>
+                <input type="number" id="bruto-jaar" value="45000" min="0" max="500000" step="500">
+              </div>
+              <div class="hint">Inclusief vakantiegeld? Zie optie hieronder.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="vakantiegeld">Vakantiegeld</label>
+              <select id="vakantiegeld">
+                <option value="included">Inbegrepen in jaarsalaris</option>
+                <option value="excluded" selected>Exclusief (8% wordt toegevoegd)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="leeftijd">Leeftijdscategorie</label>
+              <select id="leeftijd">
+                <option value="jong" selected>Jonger dan AOW-leeftijd (66+2m)</option>
+                <option value="aow">AOW-leeftijd of ouder</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Opties</div>
+
+            <div class="toggle-row">
+              <label for="lhk">Loonheffingskorting toepassen</label>
+              <label class="toggle">
+                <input type="checkbox" id="lhk" checked>
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+
+            <div class="toggle-row">
+              <label for="dertig">30%-regeling (expats)</label>
+              <label class="toggle">
+                <input type="checkbox" id="dertig">
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RESULTS -->
+        <div>
+          <div class="results-card" id="results-panel">
+            <div class="results-main-label">Netto per maand</div>
+            <div class="results-main-value" id="res-netto-maand">—</div>
+
+            <div class="results-breakdown">
+              <div class="result-line">
+                <span class="result-line__label">Bruto per maand</span>
+                <span class="result-line__value" id="res-bruto-maand">—</span>
+              </div>
+              <div class="result-line result-line--negative">
+                <span class="result-line__label">Loonbelasting (box 1)</span>
+                <span class="result-line__value" id="res-belasting">—</span>
+              </div>
+              <div class="result-line result-line--negative">
+                <span class="result-line__label">Bijdrage Zvw (5,32%)</span>
+                <span class="result-line__value" id="res-zvw">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Arbeidskorting</span>
+                <span class="result-line__value" id="res-arbeidskorting">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Algemene heffingskorting</span>
+                <span class="result-line__value" id="res-ahk">—</span>
+              </div>
+              <div class="result-line result-line--subtotal">
+                <span class="result-line__label">Netto per jaar</span>
+                <span class="result-line__value" id="res-netto-jaar">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Vakantiegeld (netto)</span>
+                <span class="result-line__value" id="res-vakantiegeld">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Effectief belastingpercentage</span>
+                <span class="result-line__value" id="res-effectief">—</span>
+              </div>
+            </div>
+
+            <p class="results-disclaimer">Indicatieve berekening op basis van 2025-tabellen. Geen officieel belastingadvies.</p>
+          </div>
+        </div>
+
+      </div><!-- /tool-layout -->
+
+      <!-- SEO content -->
+      <div class="tool-info">
+        <h2>Hoe werkt de netto salaris berekening?</h2>
+        <p>In Nederland betaal je inkomstenbelasting via twee tariefschijven. In 2025 geldt een tarief van <strong>36,97%</strong> voor inkomen tot €75.624 en <strong>49,50%</strong> voor het deel daarboven. Op het berekende belastingbedrag worden de heffingskortingen in mindering gebracht: de algemene heffingskorting en de arbeidskorting.</p>
+
+        <h3>Wat is de arbeidskorting?</h3>
+        <p>De arbeidskorting is een korting op je belasting die je ontvangt omdat je werkt. Voor 2025 loopt de maximale arbeidskorting op tot €5.052 bij een inkomen rond €40.000. Bij hogere inkomens wordt de korting afgebouwd.</p>
+
+        <h3>Wat is de algemene heffingskorting?</h3>
+        <p>De algemene heffingskorting (AHK) is in 2025 maximaal €3.362 bij lagere inkomens. Bij een inkomen boven ~€22.000 wordt de AHK geleidelijk afgebouwd tot nihil bij een inkomen van ongeveer €75.624.</p>
+
+        <h3>Wat is de bijdrage Zvw?</h3>
+        <p>Naast loonbelasting betaal je ook een inkomensafhankelijke bijdrage Zorgverzekeringswet (Zvw). In 2025 is dit 5,32% van je loon, met een maximumbijdrage-grondslag van €75.864. Deze premie betaalt jouw werkgever aan het zorgfonds — je ziet het terug als aftrekpost in je netto berekening.</p>
+
+        <h3>Bruto of netto – wat staat in mijn contract?</h3>
+        <p>In Nederland wordt salarisonderhandeling vrijwel altijd gedaan in <em>bruto</em> bedragen. Het netto bedrag dat je daadwerkelijk ontvangt hangt af van je persoonlijke situatie: leeftijd, eventuele toeslagen, en of je de loonheffingskorting bij je werkgever laat toepassen.</p>
+
+        <h3>Veelgestelde salarissen berekend</h3>
+        <p>Ter referentie: bij een bruto jaarsalaris van €40.000 ontvang je netto ongeveer €2.600 per maand. Bij €60.000 bruto per jaar is dat circa €3.650 netto per maand. Bij €80.000 bruto per jaar kom je uit op circa €4.500 netto per maand.</p>
+      </div>
+
+      <!-- Ad slot bottom -->
+      <div class="ad-slot" style="padding: 24px 0 0 0; justify-content: flex-start;">
+        <!-- ADVERTENTIE -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-left">
+        <strong>MaandlastCheck.nl</strong>
+        <p>Onafhankelijke financiële calculators voor Nederland.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="/tools/netto-salaris-calculator.html">Netto Salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Maximale Hypotheek</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </nav>
+      <p class="footer-legal">© 2025 MaandlastCheck.nl — Berekeningen zijn indicatief. Geen financieel advies.</p>
+    </div>
+  </footer>
+
+  <script src="../js/netto-salaris.js"></script>
+</body>
+</html>

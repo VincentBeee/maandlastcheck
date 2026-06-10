@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /disclaimer.html
+
+Sitemap: https://maandlastcheck.nl/sitemap.xml

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maximale Hypotheek Berekenen 2025 — NIBUD-normen | MaandlastCheck</title>
+  <meta name="description" content="Bereken hoeveel hypotheek je maximaal kunt krijgen op basis van je inkomen. Gebaseerd op NIBUD-normen 2025. Twee inkomens mogelijk. Gratis en vrijblijvend.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maandlastcheck.nl/tools/maximale-hypotheek-calculator.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Maximale Hypotheek Calculator 2025",
+    "description": "Bereken je maximale hypotheek op basis van inkomen en NIBUD-normen 2025.",
+    "url": "https://maandlastcheck.nl/tools/maximale-hypotheek-calculator.html",
+    "isPartOf": { "@type": "WebSite", "name": "MaandlastCheck", "url": "https://maandlastcheck.nl" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">Maandlast<span>Check</span></a>
+      <nav>
+        <a href="/tools/netto-salaris-calculator.html">Netto salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Hypotheek</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="container">
+
+      <div class="tool-page__header">
+        <div class="tool-page__breadcrumb">
+          <a href="/">MaandlastCheck</a> › Maximale Hypotheek Calculator
+        </div>
+        <h1 class="tool-page__title">Maximale Hypotheek Indicatie 2025</h1>
+        <p class="tool-page__subtitle">Hoeveel kun je maximaal lenen voor een huis? Gebaseerd op NIBUD-woonlastennormen en actuele rentestanden.</p>
+      </div>
+
+      <!-- Ad slot -->
+      <div class="ad-slot" style="padding: 0 0 24px 0; justify-content: flex-start;"><!-- ADVERTENTIE --></div>
+
+      <div class="tool-layout">
+
+        <!-- INPUT CARD -->
+        <div class="calc-card">
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Inkomen</div>
+
+            <div class="form-group">
+              <label for="inkomen1">Bruto jaarinkomen (persoon 1)</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">€</span>
+                <input type="number" id="inkomen1" value="55000" min="0" max="500000" step="500">
+              </div>
+            </div>
+
+            <div class="toggle-row">
+              <label for="twee-inkomens">Twee inkomens</label>
+              <label class="toggle">
+                <input type="checkbox" id="twee-inkomens">
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+
+            <div class="form-group" id="inkomen2-group" style="display:none; margin-top: 14px;">
+              <label for="inkomen2">Bruto jaarinkomen (persoon 2)</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">€</span>
+                <input type="number" id="inkomen2" value="35000" min="0" max="500000" step="500">
+              </div>
+              <div class="hint">Het laagste inkomen telt voor 90% mee (NIBUD 2025).</div>
+            </div>
+          </div>
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Hypotheekparameters</div>
+
+            <div class="form-group">
+              <label for="rente">Hypotheekrente (% per jaar)</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">%</span>
+                <input type="number" id="rente" value="4.0" min="1" max="12" step="0.1" style="padding-left: 30px;">
+              </div>
+              <div class="hint">Actuele 10-jaar vast: ca. 4,0–4,5%</div>
+            </div>
+
+            <div class="form-group">
+              <label for="looptijd">Looptijd (jaren)</label>
+              <select id="looptijd">
+                <option value="30" selected>30 jaar</option>
+                <option value="25">25 jaar</option>
+                <option value="20">20 jaar</option>
+                <option value="15">15 jaar</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="hypotheekvorm">Hypotheekvorm</label>
+              <select id="hypotheekvorm">
+                <option value="annuitair" selected>Annuïtair</option>
+                <option value="lineair">Lineair</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Schulden</div>
+            <div class="form-group">
+              <label for="studielening">Studieschuld</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">€</span>
+                <input type="number" id="studielening" value="0" min="0" max="200000" step="500">
+              </div>
+              <div class="hint">Schuld verlaagt je maximale hypotheek (DUO-toets)</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RESULTS -->
+        <div>
+          <div class="results-card navy" id="hyp-results">
+            <div class="results-main-label">Maximale hypotheek (indicatie)</div>
+            <div class="results-main-value" id="res-max-hyp">—</div>
+
+            <div class="results-breakdown">
+              <div class="result-line">
+                <span class="result-line__label">Toetsinkomen</span>
+                <span class="result-line__value" id="res-toetsinkomen">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">NIBUD woonlastnorm</span>
+                <span class="result-line__value" id="res-nibud-norm">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Max. bruto maandlast</span>
+                <span class="result-line__value" id="res-max-maandlast">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Maandlast bij max. hyp.</span>
+                <span class="result-line__value" id="res-maandlast">—</span>
+              </div>
+              <div class="result-line result-line--subtotal">
+                <span class="result-line__label">Eigen woningforfait/jaar</span>
+                <span class="result-line__value" id="res-ewf">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Studielening impact</span>
+                <span class="result-line__value" id="res-studie-impact">—</span>
+              </div>
+            </div>
+
+            <p class="results-disclaimer">Indicatieve berekening o.b.v. NIBUD-normen 2025. Werkelijke hypotheek bepaalt je geldverstrekker. Geen bindend aanbod of financieel advies.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SEO content -->
+      <div class="tool-info">
+        <h2>Hoe wordt de maximale hypotheek berekend?</h2>
+        <p>Geldverstrekkers gebruiken de <strong>NIBUD-woonlastennormen</strong> om te bepalen hoeveel van je inkomen je maximaal aan woonlasten mag besteden. Dit percentage heet de <em>financieringslastenpercentage</em> (FLP) en varieert tussen de 18% en 27% van je bruto inkomen, afhankelijk van je inkomensniveau en de geldende hypotheekrente.</p>
+
+        <h3>Toetsinkomen bij twee inkomens</h3>
+        <p>Heb je een partner met ook een inkomen? Sinds 2023 telt het laagste inkomen voor 90% mee in de berekening van het toetsinkomen. Dit is gunstig ten opzichte van vroeger, toen het laagste inkomen slechts voor 70% of 80% meegerekend werd.</p>
+
+        <h3>Effect van een studieschuld</h3>
+        <p>Een studieschuld heeft invloed op je maximale hypotheek. De DUO-toetsregel houdt in dat geldverstrekkers 0,75% van je oorspronkelijke studieschuld als fictieve maandlast meetellen. Bij een studieschuld van €30.000 is dat €225 per maand — wat je maximale hypotheek met circa €40.000–50.000 kan verlagen.</p>
+
+        <h3>Annuïtair vs. lineaire hypotheek</h3>
+        <p>Bij een <strong>annuïtaire hypotheek</strong> betaal je elke maand hetzelfde bedrag (rente + aflossing), maar in het begin betaal je relatief veel rente en weinig aflossing. Bij een <strong>lineaire hypotheek</strong> los je elke maand een vast deel af, waardoor de rentelast elke maand daalt. De lineaire variant geeft je doorgaans een lagere maximale hypotheek, omdat de beginlasten hoger zijn.</p>
+
+        <h3>Hypotheek berekening in 2025</h3>
+        <p>In 2025 zijn de NIBUD-normen licht aangepast. Door de gestegen energieprijzen en hogere woonkosten is de norm voor lagere inkomens iets verruimd. Tegelijkertijd zijn de hypotheekrentes hoog ten opzichte van het historisch gemiddelde, waardoor de maximale hypotheek bij gelijk inkomen lager uitvalt dan enkele jaren geleden.</p>
+      </div>
+
+      <!-- Ad slot bottom -->
+      <div class="ad-slot" style="padding: 24px 0 0 0; justify-content: flex-start;"><!-- ADVERTENTIE --></div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-left">
+        <strong>MaandlastCheck.nl</strong>
+        <p>Onafhankelijke financiële calculators voor Nederland.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="/tools/netto-salaris-calculator.html">Netto Salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Maximale Hypotheek</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </nav>
+      <p class="footer-legal">© 2025 MaandlastCheck.nl — Berekeningen zijn indicatief. Geen financieel advies.</p>
+    </div>
+  </footer>
+
+  <script src="../js/hypotheek.js"></script>
+</body>
+</html>
