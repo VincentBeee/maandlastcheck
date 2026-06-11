@@ -16,9 +16,17 @@ Evergreen SEO-website met gratis financiële calculators voor Nederlandse consum
 ├── css/style.css                            ← volledig design system (CSS variables)
 ├── js/netto-salaris.js                      ← belastingberekeningen
 ├── js/hypotheek.js                          ← NIBUD hypotheeklogica
+├── js/studielast.js                         ← DUO draagkrachtberekening
+├── js/huur-vs-koop.js                       ← huur vs. koop vergelijker
+├── js/lening-check.js                       ← oversluiten berekening
+├── js/koopkracht.js                         ← koopkracht-index
 ├── tools/
 │   ├── netto-salaris-calculator.html
-│   └── maximale-hypotheek-calculator.html
+│   ├── maximale-hypotheek-calculator.html
+│   ├── studielast-calculator.html
+│   ├── huur-vs-koop-calculator.html
+│   ├── lening-check.html
+│   └── koopkracht-calculator.html
 ├── robots.txt
 ├── sitemap.xml
 └── disclaimer.html
@@ -96,17 +104,9 @@ Locaties:
 6. Update `<meta>` en canonical URL
 
 ## Geplande tools (backlog)
-- Budget planner (vaste lasten overzicht)
-- Huur vs koop vergelijker
-- Abonnementen-check
-- Lening-check (oversluiten)
--Hypotheeklasten-Indicator: De klassieke bruto/netto maandlast calculator.
--Budget Planner: "Wat hou ik over per maand na vaste lasten?"
-Huur-of-Koop Vergelijker: Wat zijn de maandelijkse kosten van een vergelijkbaar huurhuis vs. koophuis?
-Abonnementen-check: Wat geef ik maandelijks uit aan digitale diensten (Netflix, Spotify, etc.)?
--Vaste Lasten Trend: Houd maandelijks je totale kosten bij in een simpele grafiek.
--Koopkracht-index: Hoeveel is mijn netto inkomen waard na correctie voor stijgende kosten?
--Lening-Check: "Kan ik mijn maandlasten verlagen door over te sluiten?" 
+- Budget Planner: "Wat hou ik over per maand na vaste lasten?"
+- Abonnementen-check: Wat geef ik maandelijks uit aan digitale diensten?
+- Vaste Lasten Trend: Houd maandelijks je totale kosten bij
 
 ## Onderhoud
 - Belastingparameters: updaten in **januari** elk jaar

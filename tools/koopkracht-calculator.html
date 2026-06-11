@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koopkracht Berekenen 2025 — Loonstijging vs. Inflatie | MaandlastCheck</title>
+  <meta name="description" content="Bereken hoe je koopkracht zich ontwikkelt bij jouw loonstijging en verwachte inflatie. Zie je reëel inkomen na 5, 10 of 20 jaar in euro's van vandaag. Gratis en zonder registratie.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maandlastcheck.nl/tools/koopkracht-calculator.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BPFBM6MPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0BPFBM6MPD');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Koopkracht Calculator 2025 — Loonstijging vs. Inflatie",
+    "description": "Bereken hoe je koopkracht zich ontwikkelt bij jouw loonstijging en verwachte inflatie.",
+    "url": "https://maandlastcheck.nl/tools/koopkracht-calculator.html",
+    "isPartOf": { "@type": "WebSite", "name": "MaandlastCheck", "url": "https://maandlastcheck.nl" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">Maandlast<span>Check</span></a>
+      <nav>
+        <a href="/tools/netto-salaris-calculator.html">Netto salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Hypotheek</a>
+        <a href="/tools/studielast-calculator.html">Studielast</a>
+        <a href="/tools/huur-vs-koop-calculator.html">Huur vs. koop</a>
+        <a href="/tools/lening-check.html">Lening</a>
+        <a href="/tools/koopkracht-calculator.html">Koopkracht</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="container">
+
+      <div class="tool-page__header">
+        <div class="tool-page__breadcrumb">
+          <a href="/">MaandlastCheck</a> › Koopkracht-index
+        </div>
+        <h1 class="tool-page__title">Koopkracht-index 2025</h1>
+        <p class="tool-page__subtitle">Hoeveel is je inkomen straks nog waard? Bereken je reële koopkracht na inflatie en zie of je loonstijging genoeg is.</p>
+      </div>
+
+      <!-- Ad slot top -->
+      <div class="ad-slot" style="padding: 0 0 24px 0; justify-content: flex-start;">
+        <!-- ADVERTENTIE -->
+      </div>
+
+      <div class="tool-layout">
+
+        <!-- INPUT CARD -->
+        <div class="calc-card">
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Jouw inkomen</div>
+
+            <div class="form-group">
+              <label for="inkomen">Netto maandinkomen</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">€</span>
+                <input type="number" id="inkomen" value="2800" min="100" max="50000" step="50">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="loongroei">Verwachte loonstijging (% per jaar)</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">%</span>
+                <input type="number" id="loongroei" value="3.0" min="0" max="20" step="0.5" style="padding-left: 30px;">
+              </div>
+              <div class="hint">CAO-loonstijging NL 2024: ca. 5–6%. Langjarig gemiddelde: ca. 2–3%.</div>
+            </div>
+          </div>
+
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Inflatie & horizon</div>
+
+            <div class="form-group">
+              <label for="inflatie">Verwachte inflatie (% per jaar)</label>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">%</span>
+                <input type="number" id="inflatie" value="3.5" min="0" max="20" step="0.5" style="padding-left: 30px;">
+              </div>
+              <div class="hint">ECB-doelstelling: 2%. NL-gemiddelde 2022–2025: ca. 5%. Verwachting 2025: ca. 3,5%.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="horizon">Tijdshorizon</label>
+              <select id="horizon">
+                <option value="5">5 jaar</option>
+                <option value="10" selected>10 jaar</option>
+                <option value="15">15 jaar</option>
+                <option value="20">20 jaar</option>
+                <option value="30">30 jaar</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RESULTS -->
+        <div>
+          <div class="results-card navy" id="results-panel">
+            <div class="results-main-label">Reëel inkomen na <span class="horizon-label">10</span> jaar</div>
+            <div class="results-main-value" id="res-reeel-einde">—</div>
+
+            <div id="res-advies" style="font-size:0.85rem; font-weight:600; background:rgba(255,255,255,0.15); border-radius:8px; padding:8px 14px; margin-bottom:20px;">—</div>
+
+            <div class="results-breakdown">
+              <div class="result-line">
+                <span class="result-line__label">Nominaal inkomen na <span class="horizon-label">10</span> jaar</span>
+                <span class="result-line__value" id="res-nominaal-einde">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Inkomen nu (referentie)</span>
+                <span class="result-line__value" id="res-reeel-einde" style="display:none;">—</span>
+              </div>
+              <div class="result-line result-line--subtotal">
+                <span class="result-line__label">Koopkrachtmutatie totaal</span>
+                <span class="result-line__value" id="res-mutatie-totaal">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Koopkrachtmutatie per jaar</span>
+                <span class="result-line__value" id="res-mutatie-jaar">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Koopkrachtverschil per maand</span>
+                <span class="result-line__value" id="res-verschil-maand">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Benodigde loonstijging (break-even)</span>
+                <span class="result-line__value" id="res-vereist-loon">—</span>
+              </div>
+            </div>
+
+            <p class="results-disclaimer">Reëel inkomen is het nominale inkomen gecorrigeerd voor cumulatieve inflatie, uitgedrukt in euro's van vandaag.</p>
+          </div>
+        </div>
+
+      </div><!-- /tool-layout -->
+
+      <!-- SEO content -->
+      <div class="tool-info">
+        <h2>Wat is koopkracht en hoe berekenen we het?</h2>
+        <p>Koopkracht is het vermogen van je inkomen om goederen en diensten te kopen. Als je inkomen stijgt maar prijzen stijgen harder, dan daalt je <strong>reële koopkracht</strong> — ook al verdien je nominaal meer. De calculator drukt je inkomen na <em>N</em> jaar uit in euro's van vandaag, zodat je een eerlijke vergelijking kunt maken.</p>
+
+        <h3>Reëel inkomen vs. nominaal inkomen</h3>
+        <p>Stel je verdient nu €2.800 netto per maand, je loon stijgt 3% per jaar en de inflatie is 3,5%. Na 10 jaar verdien je nominaal circa €3.763, maar in koopkracht van vandaag is dat slechts €2.667. Je bent dus per maand €133 (in huidige euro's) slechter af, ondanks de loonstijging.</p>
+
+        <h3>Loonstijging en inflatie in Nederland 2025</h3>
+        <p>In 2022 piekte de Nederlandse inflatie op ruim 17%, gedreven door energieprijzen. In 2023 daalde dit naar gemiddeld 4,1% en in 2024 naar ca. 2,8%. De verwachting voor 2025 ligt rond de 3,0–3,5%. CAO-loongroei lag in 2024 gemiddeld op 5–6%, waardoor de meeste werknemers in koopkracht vooruitgingen. Voor de langere termijn rekent het CPB met een structurele loonstijging van 2–3% en inflatie rond het ECB-doel van 2%.</p>
+
+        <h3>Wat als mijn koopkracht daalt?</h3>
+        <p>Als je koopkracht stelselmatig daalt, zijn er drie oplossingen: (1) hogere loonsverhoging bedingen bij je werkgever of opdrachtgever, (2) vaste lasten verlagen — vergelijk je hypotheek of lening met de <a href="/tools/lening-check.html">Lening-Check</a>, (3) extra rendement behalen op spaargeld en beleggingen boven het inflatieniveau.</p>
+
+        <h3>Inflatie en hypotheek</h3>
+        <p>Voor huizenbezitters met een vaste hypotheekrente werkt inflatie in je voordeel: je maandlast blijft nominaal gelijk maar wordt in reële termen steeds kleiner. Een annuïteit van €1.200 per maand is over 20 jaar bij 3% inflatie nog maar circa €665 waard in euro's van vandaag.</p>
+      </div>
+
+      <!-- Ad slot bottom -->
+      <div class="ad-slot" style="padding: 24px 0 0 0; justify-content: flex-start;">
+        <!-- ADVERTENTIE -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-left">
+        <strong>MaandlastCheck.nl</strong>
+        <p>Onafhankelijke financiële calculators voor Nederland.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="/tools/netto-salaris-calculator.html">Netto Salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Maximale Hypotheek</a>
+        <a href="/tools/studielast-calculator.html">Studielast DUO</a>
+        <a href="/tools/huur-vs-koop-calculator.html">Huur vs. Koop</a>
+        <a href="/tools/lening-check.html">Lening-Check</a>
+        <a href="/tools/koopkracht-calculator.html">Koopkracht</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </nav>
+      <p class="footer-legal">© 2025 MaandlastCheck.nl — Berekeningen zijn indicatief. Geen financieel advies.</p>
+    </div>
+  </footer>
+
+  <script src="../js/koopkracht.js"></script>
+</body>
+</html>
