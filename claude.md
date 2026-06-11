@@ -108,6 +108,12 @@ Locaties:
 - Abonnementen-check: Wat geef ik maandelijks uit aan digitale diensten?
 - Vaste Lasten Trend: Houd maandelijks je totale kosten bij
 
+## IndexNow (Bing/Yandex snelle indexering)
+- Key file: `7c45e4d367394dc2aec9221e685aaf52.txt` (staat in root, gepubliceerd via GitHub Pages)
+- Submit script: `bash submit-indexnow.sh`
+- **Uitvoeren na elke nieuwe tool of inhoudelijke wijziging**
+- Bij nieuwe tool: voeg de URL toe aan de `urlList` in `submit-indexnow.sh`
+
 ## Onderhoud
 - Belastingparameters: updaten in **januari** elk jaar
 - NIBUD-normen: updaten in **januari** elk jaar
