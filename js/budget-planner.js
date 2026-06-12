@@ -87,7 +87,6 @@ function updateUI() {
 function renderSankey() {
   const svg = document.getElementById('sankey-svg');
   if (!svg) return;
-
   while (svg.firstChild) svg.removeChild(svg.firstChild);
 
   const NS = 'http://www.w3.org/2000/svg';
@@ -97,88 +96,167 @@ function renderSankey() {
     return e;
   }
 
-  const inkomenBase  = parseFloat(document.getElementById('inkomen')?.value) || 0;
-  const inkomenExtra = somDynamic('extra-inkomen-rows');
-  const inkomen      = inkomenBase + inkomenExtra;
+  // Inkomensbronnen verzamelen
+  const INC_COLORS = ['#1B6E4F', '#27916A', '#33AF7F', '#3EC494'];
+  const sources = [];
+  const baseVal = parseFloat(document.getElementById('inkomen')?.value) || 0;
+  if (baseVal > 0) sources.push({ name: 'Netto inkomen', val: baseVal, color: INC_COLORS[0] });
+  const extraIncEl = document.getElementById('extra-inkomen-rows');
+  if (extraIncEl) {
+    extraIncEl.querySelectorAll('.dynamic-row').forEach((row, i) => {
+      const val = parseFloat(row.querySelector('.dyn-value')?.value) || 0;
+      if (val > 0) {
+        const name = row.querySelector('.label-input')?.value.trim() || 'Extra inkomen';
+        sources.push({ name, val, color: INC_COLORS[Math.min(i + 1, INC_COLORS.length - 1)] });
+      }
+    });
+  }
+  const inkomen = sources.reduce((s, src) => s + src.val, 0);
 
   if (inkomen <= 0) {
-    const t = mkEl('text', { x: 400, y: 190, 'text-anchor': 'middle', 'font-family': 'Inter,sans-serif', 'font-size': 14, fill: '#888' });
+    const t = mkEl('text', { x: 450, y: 190, 'text-anchor': 'middle', 'font-family': 'Inter,sans-serif', 'font-size': 14, fill: '#888' });
     t.textContent = 'Vul je inkomen in om de flow te zien.';
     svg.appendChild(t);
     return;
   }
 
-  const cats = [
+  // Uitgavencategorieën verzamelen
+  const catDefs = [
     { name: 'Wonen',           color: '#2E4A7A', ids: ['huur','energie','zorgverzekering','verzekeringen'], extraId: 'extra-wonen-rows' },
     { name: 'Levensonderhoud', color: '#3A5C9A', ids: ['boodschappen','transport','abonnementen-post'],     extraId: 'extra-levens-rows' },
     { name: 'Persoonlijk',     color: '#4D6EB2', ids: ['verzorging','uiteten','hobby'],                     extraId: 'extra-persoon-rows' },
     { name: 'Sparen & overig', color: '#6583C4', ids: ['sparen','overig'],                                  extraId: 'extra-sparen-rows' },
   ];
-
-  const items = cats
+  const expenses = catDefs
     .map(c => ({ name: c.name, color: c.color, val: som(c.ids) + somDynamic(c.extraId) }))
     .filter(c => c.val > 0);
-
-  const totalOut = items.reduce((s, c) => s + c.val, 0);
+  const totalOut = expenses.reduce((s, c) => s + c.val, 0);
   const vrij = inkomen - totalOut;
-  if (vrij > 0) items.push({ name: 'Vrij besteedbaar', color: '#1B6E4F', val: vrij });
-  if (items.length === 0) return;
+  if (vrij > 0) expenses.push({ name: 'Vrij besteedbaar', color: '#1B6E4F', val: vrij });
 
-  const W = 800, H = 380, PT = 42, PB = 28;
-  const NW = 16, GAP = 7;
-  const SX = 10, TX = 608;
-  const usable = H - PT - PB;
-  const gapTotal = GAP * (items.length - 1);
-  const scale = (usable - gapTotal) / Math.max(inkomen, totalOut);
-  const srcH = inkomen * scale;
-  const compress = totalOut > inkomen ? inkomen / totalOut : 1;
-  const MX = Math.round((SX + NW + TX) / 2);
+  // Layout — drie kolommen, alles verticaal gecentreerd op CY
+  const W = 900, H = 380;
+  const GAP = 8, NW = 16;
+  const SX = 145;   // inkomensnodes links
+  const BX = 405;   // budget-node midden
+  const TX = 665;   // uitgavennodes rechts
+  const CY = H / 2;
+  const USABLE = H - 56;
 
-  let so = 0, to = 0;
-  const nodes = items.map(it => {
-    const th = it.val * scale;
-    const sh = th * compress;
-    const nd = { name: it.name, color: it.color, val: it.val, sy1: PT+so, sy2: PT+so+sh, ty1: PT+to, ty2: PT+to+th, th };
-    so += sh; to += th + GAP;
+  const nInc = sources.length, nExp = expenses.length;
+  const scale = Math.min(
+    nInc > 1 ? (USABLE - GAP * (nInc - 1)) / inkomen : USABLE / inkomen,
+    (USABLE - GAP * Math.max(0, nExp - 1)) / inkomen
+  );
+
+  // Budget-node hoogte en positie
+  const budH  = inkomen * scale;
+  const budY1 = CY - budH / 2;
+  const budY2 = CY + budH / 2;
+
+  // Inkomensnodes (links, gecentreerd als groep)
+  const incGroupH = sources.reduce((s, src) => s + src.val * scale, 0) + GAP * Math.max(0, nInc - 1);
+  let iY = CY - incGroupH / 2;
+  const incNodes = sources.map(src => {
+    const h = src.val * scale;
+    const nd = { name: src.name, val: src.val, color: src.color, y1: iY, y2: iY + h, h };
+    iY += h + GAP;
     return nd;
   });
 
-  // Flows (bezier-vlakken)
-  nodes.forEach(nd => {
+  // Uitgavennodes (rechts, gecentreerd als groep)
+  const expGroupH = expenses.reduce((s, ex) => s + ex.val * scale, 0) + GAP * Math.max(0, nExp - 1);
+  let eY = CY - expGroupH / 2;
+  const expNodes = expenses.map(ex => {
+    const h = ex.val * scale;
+    const nd = { name: ex.name, val: ex.val, color: ex.color, y1: eY, y2: eY + h, h };
+    eY += h + GAP;
+    return nd;
+  });
+
+  // Koppelingen inkomen → budget (links van budget-bar)
+  let bLOff = 0;
+  const incFlows = incNodes.map(nd => {
+    const bY1 = budY1 + bLOff, bY2 = bY1 + nd.h;
+    bLOff += nd.h;
+    return { nd, bY1, bY2 };
+  });
+
+  // Koppelingen budget → uitgaven (rechts van budget-bar)
+  const expCompress = totalOut > inkomen ? inkomen / totalOut : 1;
+  let bROff = 0;
+  const expFlows = expNodes.map(nd => {
+    const bH = nd.h * expCompress;
+    const bY1 = budY1 + bROff, bY2 = bY1 + bH;
+    bROff += bH;
+    return { nd, bY1, bY2 };
+  });
+
+  const ML = Math.round((SX + NW + BX) / 2); // bezier-middelpunt links sectie
+  const MR = Math.round((BX + NW + TX) / 2); // bezier-middelpunt rechts sectie
+
+  // ——— TEKENEN ———
+
+  // Inkomen → budget flows
+  incFlows.forEach(f => {
+    const n = f.nd;
     svg.appendChild(mkEl('path', {
-      d: 'M'+(SX+NW)+','+nd.sy1+' C'+MX+','+nd.sy1+' '+MX+','+nd.ty1+' '+TX+','+nd.ty1+
-         'L'+TX+','+nd.ty2+' C'+MX+','+nd.ty2+' '+MX+','+nd.sy2+' '+(SX+NW)+','+nd.sy2+'Z',
-      fill: nd.color, opacity: 0.22,
+      d: 'M'+(SX+NW)+','+n.y1+' C'+ML+','+n.y1+' '+ML+','+f.bY1+' '+BX+','+f.bY1+
+         'L'+BX+','+f.bY2+' C'+ML+','+f.bY2+' '+ML+','+n.y2+' '+(SX+NW)+','+n.y2+'Z',
+      fill: n.color, opacity: 0.22,
     }));
   });
 
-  // Bronnode (inkomen, links)
-  svg.appendChild(mkEl('rect', { x: SX, y: PT, width: NW, height: Math.max(srcH, 2), fill: '#1B6E4F', rx: 3 }));
-  const sl = mkEl('text', { x: SX+NW/2, y: PT-20, 'text-anchor': 'middle', 'font-family': 'Inter,sans-serif', 'font-size': 11, 'font-weight': 600, fill: '#1A2233' });
-  sl.textContent = 'Inkomen';
-  svg.appendChild(sl);
-  const sv = mkEl('text', { x: SX+NW/2, y: PT-7, 'text-anchor': 'middle', 'font-family': 'Inter,sans-serif', 'font-size': 10, fill: '#5A6478' });
-  sv.textContent = fmt(inkomen);
-  svg.appendChild(sv);
+  // Budget → uitgaven flows
+  expFlows.forEach(f => {
+    const n = f.nd;
+    svg.appendChild(mkEl('path', {
+      d: 'M'+(BX+NW)+','+f.bY1+' C'+MR+','+f.bY1+' '+MR+','+n.y1+' '+TX+','+n.y1+
+         'L'+TX+','+n.y2+' C'+MR+','+n.y2+' '+MR+','+f.bY2+' '+(BX+NW)+','+f.bY2+'Z',
+      fill: n.color, opacity: 0.22,
+    }));
+  });
 
-  // Doelnodes + labels (rechts)
-  nodes.forEach(nd => {
-    svg.appendChild(mkEl('rect', { x: TX, y: nd.ty1, width: NW, height: Math.max(nd.th, 2), fill: nd.color, rx: 3 }));
-    if (nd.th >= 14) {
+  // Inkomensnodes + labels (links van node)
+  incNodes.forEach(nd => {
+    svg.appendChild(mkEl('rect', { x: SX, y: nd.y1, width: NW, height: Math.max(nd.h, 2), fill: nd.color, rx: 3 }));
+    const lx = SX - 8;
+    const my = (nd.y1 + nd.y2) / 2;
+    const tl = mkEl('text', { x: lx, y: my - 7, 'text-anchor': 'end', 'font-family': 'Inter,sans-serif', 'font-size': 11, 'font-weight': 600, fill: '#1A2233' });
+    tl.textContent = nd.name;
+    svg.appendChild(tl);
+    const tv = mkEl('text', { x: lx, y: my + 7, 'text-anchor': 'end', 'font-family': 'Inter,sans-serif', 'font-size': 10, fill: '#5A6478' });
+    tv.textContent = fmt(nd.val);
+    svg.appendChild(tv);
+  });
+
+  // Budget-node (midden)
+  svg.appendChild(mkEl('rect', { x: BX, y: budY1, width: NW, height: Math.max(budH, 2), fill: '#1E7A56', rx: 3 }));
+  const bl = mkEl('text', { x: BX + NW/2, y: budY1 - 16, 'text-anchor': 'middle', 'font-family': 'Inter,sans-serif', 'font-size': 11, 'font-weight': 600, fill: '#1A2233' });
+  bl.textContent = 'Budget';
+  svg.appendChild(bl);
+  const bv = mkEl('text', { x: BX + NW/2, y: budY1 - 4, 'text-anchor': 'middle', 'font-family': 'Inter,sans-serif', 'font-size': 10, fill: '#5A6478' });
+  bv.textContent = fmt(inkomen);
+  svg.appendChild(bv);
+
+  // Uitgavennodes + labels (rechts van node)
+  expNodes.forEach(nd => {
+    svg.appendChild(mkEl('rect', { x: TX, y: nd.y1, width: NW, height: Math.max(nd.h, 2), fill: nd.color, rx: 3 }));
+    if (nd.h >= 14) {
       const lx = TX + NW + 8;
-      const my = (nd.ty1 + nd.ty2) / 2;
+      const my = (nd.y1 + nd.y2) / 2;
       const pct = Math.round(nd.val / inkomen * 100);
-      const tl = mkEl('text', { x: lx, y: my-7, 'font-family': 'Inter,sans-serif', 'font-size': 11, 'font-weight': 600, fill: '#1A2233' });
+      const tl = mkEl('text', { x: lx, y: my - 7, 'font-family': 'Inter,sans-serif', 'font-size': 11, 'font-weight': 600, fill: '#1A2233' });
       tl.textContent = nd.name;
       svg.appendChild(tl);
-      const tv = mkEl('text', { x: lx, y: my+7, 'font-family': 'Inter,sans-serif', 'font-size': 10, fill: '#5A6478' });
+      const tv = mkEl('text', { x: lx, y: my + 7, 'font-family': 'Inter,sans-serif', 'font-size': 10, fill: '#5A6478' });
       tv.textContent = fmt(nd.val) + ' · ' + pct + '%';
       svg.appendChild(tv);
     }
   });
 
-  // Watermark
-  const wm = mkEl('text', { x: W/2, y: H-8, 'text-anchor': 'middle', 'font-family': 'Inter,sans-serif', 'font-size': 9, fill: 'rgba(90,100,120,0.38)' });
+  // Watermerk
+  const wm = mkEl('text', { x: W/2, y: H - 8, 'text-anchor': 'middle', 'font-family': 'Inter,sans-serif', 'font-size': 9, fill: 'rgba(90,100,120,0.38)' });
   wm.textContent = 'maandlastcheck.nl';
   svg.appendChild(wm);
 }
