@@ -1,6 +1,6 @@
 /**
- * MaandlastCheck — Netto Salaris Calculator 2025
- * Belastingtabellen conform Belastingdienst 2025
+ * MaandlastCheck — Netto Salaris Calculator 2026
+ * Belastingtabellen conform Belastingdienst 2026
  */
 
 // ——— 2025 BELASTINGPARAMETERS ———

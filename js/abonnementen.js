@@ -1,4 +1,4 @@
-// MaandlastCheck — Abonnementen-Check 2025
+// MaandlastCheck — Abonnementen-Check 2026
 
 const fmt = (val) =>
   new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(val);

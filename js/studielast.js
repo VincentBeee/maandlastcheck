@@ -1,4 +1,4 @@
-// MaandlastCheck — Studielast Calculator (DUO terugbetaling) 2025
+// MaandlastCheck — Studielast Calculator (DUO terugbetaling) 2026
 
 const DUO_2025 = {
   rente: {

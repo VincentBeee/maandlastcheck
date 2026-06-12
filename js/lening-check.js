@@ -1,4 +1,4 @@
-// MaandlastCheck — Lening-Check (Oversluiten) 2025
+// MaandlastCheck — Lening-Check (Oversluiten) 2026
 
 const fmt = (val) =>
   new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(val);

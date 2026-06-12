@@ -72,7 +72,7 @@ Evergreen SEO-website met gratis financiële calculators voor Nederlandse consum
 - sitemap.xml indienen in Google Search Console
 - Uitlegblokken onder elke calculator voor long-tail content
 - Doelzoekwoorden:
-  - "netto salaris berekenen 2025"
+  - "netto salaris berekenen 2026"
   - "bruto netto berekening"
   - "maximale hypotheek berekenen"
   - "hoeveel hypotheek kan ik krijgen"

@@ -1,6 +1,6 @@
 /**
- * MaandlastCheck — Maximale Hypotheek Calculator 2025
- * Gebaseerd op NIBUD woonlastennormen 2025
+ * MaandlastCheck — Maximale Hypotheek Calculator 2026
+ * Gebaseerd op NIBUD woonlastennormen 2026
  */
 
 // ——— NIBUD FINANCIERINGSLASTENPERCENTAGES 2025 ———
