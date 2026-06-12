@@ -12,6 +12,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 
+  <style>
+    .add-row-btn {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      width: 100%; margin-top: 10px;
+      background: none; border: 1.5px dashed var(--border); border-radius: 8px;
+      padding: 8px 14px; color: var(--text-muted);
+      font-size: 0.83rem; font-family: var(--font-body); cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .add-row-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .dynamic-row {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+    }
+    .dynamic-row .label-input {
+      flex: 1; min-width: 0; border: 1px solid var(--border); border-radius: 8px;
+      padding: 8px 10px; font-size: 0.85rem; font-family: var(--font-body);
+      color: var(--text); background: var(--bg);
+    }
+    .dynamic-row .label-input:focus { outline: none; border-color: var(--accent); }
+    .dynamic-row .input-wrap { width: 110px; flex-shrink: 0; }
+    .remove-row-btn {
+      background: none; border: none; color: var(--text-muted);
+      cursor: pointer; font-size: 1.1rem; padding: 4px 6px; border-radius: 4px;
+      line-height: 1; flex-shrink: 0; transition: color 0.15s, background 0.15s;
+    }
+    .remove-row-btn:hover { color: #c0392b; background: rgba(192,57,43,0.08); }
+    .privacy-box {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--accent-lt); border: 1px solid #b8d9c5;
+      border-radius: 10px; padding: 14px 18px; margin: 28px 0 0;
+      font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;
+    }
+    .privacy-box__icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  </style>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BPFBM6MPD"></script>
   <script>
@@ -89,6 +124,8 @@
               </div>
               <div class="hint">Gebruik je netto inkomen. Gebruik de <a href="/tools/netto-salaris-calculator.html">netto salaris calculator</a> als je het niet weet.</div>
             </div>
+            <div id="extra-inkomen-rows"></div>
+            <button class="add-row-btn" onclick="addRow('extra-inkomen-rows', 'bijv. partnerinkomen')">+ Inkomstenbron toevoegen</button>
           </div>
 
           <div class="calc-card__section">
@@ -122,6 +159,8 @@
               </div>
               <div class="hint">Auto, inboedel, aansprakelijkheid, etc.</div>
             </div>
+            <div id="extra-wonen-rows"></div>
+            <button class="add-row-btn" onclick="addRow('extra-wonen-rows', 'bijv. servicekosten')">+ Post toevoegen</button>
           </div>
 
           <div class="calc-card__section">
@@ -149,6 +188,8 @@
               </div>
               <div class="hint">Gebruik de <a href="/tools/abonnementen-check.html">Abonnementen-check</a> voor een nauwkeurig bedrag.</div>
             </div>
+            <div id="extra-levens-rows"></div>
+            <button class="add-row-btn" onclick="addRow('extra-levens-rows', 'bijv. kinderopvang')">+ Post toevoegen</button>
           </div>
 
           <div class="calc-card__section">
@@ -174,6 +215,8 @@
                 <input type="number" class="budget-input" id="hobby" value="75" min="0" max="2000" step="10">
               </div>
             </div>
+            <div id="extra-persoon-rows"></div>
+            <button class="add-row-btn" onclick="addRow('extra-persoon-rows', 'bijv. kleding')">+ Post toevoegen</button>
           </div>
 
           <div class="calc-card__section">
@@ -192,6 +235,14 @@
                 <input type="number" class="budget-input" id="overig" value="50" min="0" max="5000" step="10">
               </div>
             </div>
+            <div id="extra-sparen-rows"></div>
+            <button class="add-row-btn" onclick="addRow('extra-sparen-rows', 'bijv. aflossing lening')">+ Post toevoegen</button>
+          </div>
+
+          <!-- Privacy notice -->
+          <div class="privacy-box">
+            <span class="privacy-box__icon">🔒</span>
+            <span>Alles wat je hier invult blijft gewoon op jouw eigen apparaat. We sturen niets door en slaan niets op — niet naar ons, niet naar derden. De calculator werkt volledig in je browser.</span>
           </div>
 
         </div>
@@ -311,6 +362,6 @@
     </div>
   </footer>
 
-  <script src="../js/budget-planner.js"></script>
+  <script src="../js/budget-planner.js?v=2"></script>
 </body>
 </html>
