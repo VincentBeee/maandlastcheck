@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abonnementen-Check 2025 — Wat betaal ik aan digitale diensten? | MaandlastCheck</title>
+  <meta name="description" content="Bereken wat je maandelijks uitgeeft aan Netflix, Spotify, Disney+ en andere abonnementen. Vink aan wat je hebt en zie je totaal per maand en per jaar. Gratis.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maandlastcheck.nl/tools/abonnementen-check.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BPFBM6MPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0BPFBM6MPD');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Abonnementen-Check 2025",
+    "description": "Bereken wat je maandelijks uitgeeft aan Netflix, Spotify, Disney+ en andere digitale abonnementen.",
+    "url": "https://maandlastcheck.nl/tools/abonnementen-check.html",
+    "isPartOf": { "@type": "WebSite", "name": "MaandlastCheck", "url": "https://maandlastcheck.nl" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">Maandlast<span>Check</span></a>
+      <nav>
+        <a href="/tools/netto-salaris-calculator.html">Netto salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Hypotheek</a>
+        <a href="/tools/studielast-calculator.html">Studielast</a>
+        <a href="/tools/huur-vs-koop-calculator.html">Huur vs. koop</a>
+        <a href="/tools/lening-check.html">Lening</a>
+        <a href="/tools/koopkracht-calculator.html">Koopkracht</a>
+        <a href="/tools/budget-planner.html">Budget</a>
+        <a href="/tools/abonnementen-check.html">Abonnementen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="container">
+
+      <div class="tool-page__header">
+        <div class="tool-page__breadcrumb">
+          <a href="/">MaandlastCheck</a> › Abonnementen-Check
+        </div>
+        <h1 class="tool-page__title">Abonnementen-Check 2025</h1>
+        <p class="tool-page__subtitle">Vink aan welke diensten je hebt en zie direct wat je maandelijks uitgeeft aan abonnementen. Prijzen zijn bijgewerkt voor 2025.</p>
+      </div>
+
+      <!-- Ad slot top -->
+      <div class="ad-slot" style="padding: 0 0 24px 0; justify-content: flex-start;">
+        <!-- ADVERTENTIE -->
+      </div>
+
+      <div class="tool-layout">
+
+        <!-- INPUT CARD -->
+        <div class="calc-card">
+
+          <!-- Streaming video -->
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Streaming video</div>
+            <div id="diensten-streaming"></div>
+          </div>
+
+          <!-- Muziek & video -->
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Muziek & video</div>
+            <div id="diensten-muziek"></div>
+          </div>
+
+          <!-- Nieuws -->
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Nieuws & media</div>
+            <div id="diensten-nieuws"></div>
+          </div>
+
+          <!-- Gaming -->
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Gaming</div>
+            <div id="diensten-gaming"></div>
+          </div>
+
+          <!-- Cloud & apps -->
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Cloud & apps</div>
+            <div id="diensten-cloud"></div>
+          </div>
+
+          <!-- Sport -->
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Sport & gezondheid</div>
+            <div id="diensten-sport"></div>
+          </div>
+
+          <!-- Telecom -->
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Telecom</div>
+            <div id="diensten-telecom"></div>
+          </div>
+
+          <!-- Eten -->
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Eten & bezorging</div>
+            <div id="diensten-eten"></div>
+          </div>
+
+          <!-- Eigen invoer -->
+          <div class="calc-card__section">
+            <div class="calc-card__section-label">Eigen abonnementen</div>
+
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);">
+              <label class="toggle" style="flex-shrink:0;">
+                <input type="checkbox" id="toggle-custom1">
+                <span class="toggle-track"></span>
+              </label>
+              <input type="text" id="label-custom1" placeholder="Naam dienst" style="flex:1;font-size:0.8rem;">
+              <div class="input-wrap has-prefix" style="width:90px;flex-shrink:0;">
+                <span class="input-prefix">€</span>
+                <input type="number" id="prijs-custom1" value="0" min="0" max="999" step="0.01" style="padding-left:28px;">
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);">
+              <label class="toggle" style="flex-shrink:0;">
+                <input type="checkbox" id="toggle-custom2">
+                <span class="toggle-track"></span>
+              </label>
+              <input type="text" id="label-custom2" placeholder="Naam dienst" style="flex:1;font-size:0.8rem;">
+              <div class="input-wrap has-prefix" style="width:90px;flex-shrink:0;">
+                <span class="input-prefix">€</span>
+                <input type="number" id="prijs-custom2" value="0" min="0" max="999" step="0.01" style="padding-left:28px;">
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 0;">
+              <label class="toggle" style="flex-shrink:0;">
+                <input type="checkbox" id="toggle-custom3">
+                <span class="toggle-track"></span>
+              </label>
+              <input type="text" id="label-custom3" placeholder="Naam dienst" style="flex:1;font-size:0.8rem;">
+              <div class="input-wrap has-prefix" style="width:90px;flex-shrink:0;">
+                <span class="input-prefix">€</span>
+                <input type="number" id="prijs-custom3" value="0" min="0" max="999" step="0.01" style="padding-left:28px;">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RESULTS -->
+        <div>
+          <div class="results-card" id="results-panel">
+            <div class="results-main-label">Totaal per maand</div>
+            <div class="results-main-value" id="res-maand-totaal">—</div>
+
+            <div id="res-advies" style="font-size:0.85rem; font-weight:600; background:rgba(255,255,255,0.15); border-radius:8px; padding:8px 14px; margin-bottom:20px;">Vink je actieve abonnementen aan.</div>
+
+            <div class="results-breakdown">
+              <div class="result-line result-line--subtotal">
+                <span class="result-line__label">Totaal per jaar</span>
+                <span class="result-line__value" id="res-jaar-totaal">—</span>
+              </div>
+              <div class="result-line">
+                <span class="result-line__label">Actieve abonnementen</span>
+                <span class="result-line__value" id="res-count">0</span>
+              </div>
+            </div>
+
+            <p class="results-disclaimer">Prijzen zijn actueel voor 2025. Abonnementsprijzen kunnen wijzigen. Controleer je eigen bankafschriften voor de exacte bedragen.</p>
+          </div>
+        </div>
+
+      </div><!-- /tool-layout -->
+
+      <!-- SEO content -->
+      <div class="tool-info">
+        <h2>Hoeveel geven Nederlanders uit aan abonnementen?</h2>
+        <p>Onderzoek toont aan dat Nederlanders gemiddeld 4 à 5 betaalde digitale abonnementen hebben, met een maandelijkse uitgave van €80–€130. Inclusief telecom (mobiel, internet thuis) loopt dit al snel op tot €150–€200 per maand — ofwel €1.800–€2.400 per jaar.</p>
+
+        <h3>Subscription creep: de stille kostenstijger</h3>
+        <p><em>Subscription creep</em> is het fenomeen waarbij abonnementen zich ongemerkt opstapelen. Een proefperiode hier, een bundeldeal daar — en voor je het weet heb je vijf streamingdiensten waarvan je er twee nauwelijks gebruikt. Grote aanbieders verhogen ook regelmatig hun prijzen (Netflix +€3 in 2024, Spotify +€1 in 2023) zonder dat gebruikers dit actief merken.</p>
+
+        <h3>Slim besparen op abonnementen</h3>
+        <p>Drie strategieën om te besparen: (1) <strong>Roteer</strong> je streaming-abonnementen — kijk een maand alles op Netflix, zeg op, abonneer je een maand op Disney+, enz. (2) <strong>Deel</strong> abonnementen via gezinsplannen; veel diensten staan meerdere gebruikers toe voor een kleine meerprijs. (3) <strong>Jaarabonnement</strong>: Netflix en Spotify bieden soms korting op jaarlijkse betaling — check de opties.</p>
+
+        <h3>Abonnementen en je budget</h3>
+        <p>Gebruik de totale abonnementslasten als invoer in de <a href="/tools/budget-planner.html">Budget Planner</a> om te zien welk percentage van je inkomen naar vaste digitale diensten gaat. Als vuistregel: meer dan 5% van je netto inkomen aan abonnementen is vaak een signaal om kritisch te evalueren.</p>
+
+        <h3>Vergeten abonnementen opsporen</h3>
+        <p>Check je bankafschriften op terugkerende kleine bedragen — vaak vergeten diensten zijn cloudopslag (€0,99–€9,99/mnd), domein-hosting, premium app-versies, of vakbondscontributies. De meeste banken tonen terugkerende betalingen in een apart overzicht.</p>
+      </div>
+
+      <!-- Ad slot bottom -->
+      <div class="ad-slot" style="padding: 24px 0 0 0; justify-content: flex-start;">
+        <!-- ADVERTENTIE -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-left">
+        <strong>MaandlastCheck.nl</strong>
+        <p>Onafhankelijke financiële calculators voor Nederland.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="/tools/netto-salaris-calculator.html">Netto Salaris</a>
+        <a href="/tools/maximale-hypotheek-calculator.html">Maximale Hypotheek</a>
+        <a href="/tools/studielast-calculator.html">Studielast DUO</a>
+        <a href="/tools/huur-vs-koop-calculator.html">Huur vs. Koop</a>
+        <a href="/tools/lening-check.html">Lening-Check</a>
+        <a href="/tools/koopkracht-calculator.html">Koopkracht</a>
+        <a href="/tools/budget-planner.html">Budget Planner</a>
+        <a href="/tools/abonnementen-check.html">Abonnementen</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </nav>
+      <p class="footer-legal">© 2025 MaandlastCheck.nl — Berekeningen zijn indicatief. Geen financieel advies.</p>
+    </div>
+  </footer>
+
+  <script src="../js/abonnementen.js"></script>
+
+  <script>
+    // Render dienst-rijen dynamisch vanuit DIENSTEN array
+    const CATEGORIE_MAP = {
+      netflix:     'streaming', disney:    'streaming', videoland: 'streaming',
+      prime:       'streaming', appletv:   'streaming',
+      spotify:     'muziek',   youtube:   'muziek',   applemusic:'muziek',
+      nrc:         'nieuws',   volkskrant:'nieuws',
+      psplus:      'gaming',   gamepass:  'gaming',   nintendo:  'gaming',
+      icloud:      'cloud',    ms365:     'cloud',    googleone: 'cloud',
+      sportschool: 'sport',
+      mobiel:      'telecom',  internet:  'telecom',
+      thuisbezorgd:'eten',
+    };
+
+    function maakRij(d) {
+      const div = document.createElement('div');
+      div.style.cssText = 'display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);';
+      div.innerHTML = `
+        <label class="toggle" style="flex-shrink:0;">
+          <input type="checkbox" id="toggle-${d.id}">
+          <span class="toggle-track"></span>
+        </label>
+        <span style="flex:1;font-size:0.875rem;color:var(--text);">${d.label}</span>
+        <div class="input-wrap has-prefix" style="width:90px;flex-shrink:0;">
+          <span class="input-prefix">€</span>
+          <input type="number" id="prijs-${d.id}" value="${d.prijs.toFixed(2)}" min="0" max="999" step="0.01" style="padding-left:28px;">
+        </div>`;
+      return div;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      DIENSTEN.filter(d => !d.id.startsWith('custom')).forEach(d => {
+        const cat = CATEGORIE_MAP[d.id];
+        const container = document.getElementById(`diensten-${cat}`);
+        if (container) container.appendChild(maakRij(d));
+      });
+
+      // Herregistreer event listeners na dynamisch renderen
+      DIENSTEN.forEach(d => {
+        document.getElementById(`toggle-${d.id}`)?.addEventListener('change', updateTotal);
+        document.getElementById(`prijs-${d.id}`)?.addEventListener('input', updateTotal);
+      });
+
+      // Custom text inputs
+      ['custom1','custom2','custom3'].forEach(id => {
+        document.getElementById(`toggle-${id}`)?.addEventListener('change', updateTotal);
+        document.getElementById(`prijs-${id}`)?.addEventListener('input', updateTotal);
+      });
+
+      updateTotal();
+    });
+  </script>
+</body>
+</html>

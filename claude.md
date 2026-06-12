@@ -20,13 +20,17 @@ Evergreen SEO-website met gratis financiële calculators voor Nederlandse consum
 ├── js/huur-vs-koop.js                       ← huur vs. koop vergelijker
 ├── js/lening-check.js                       ← oversluiten berekening
 ├── js/koopkracht.js                         ← koopkracht-index
+├── js/budget-planner.js                     ← budget planner
+├── js/abonnementen.js                       ← abonnementen-check
 ├── tools/
 │   ├── netto-salaris-calculator.html
 │   ├── maximale-hypotheek-calculator.html
 │   ├── studielast-calculator.html
 │   ├── huur-vs-koop-calculator.html
 │   ├── lening-check.html
-│   └── koopkracht-calculator.html
+│   ├── koopkracht-calculator.html
+│   ├── budget-planner.html
+│   └── abonnementen-check.html
 ├── robots.txt
 ├── sitemap.xml
 └── disclaimer.html
@@ -104,8 +108,6 @@ Locaties:
 6. Update `<meta>` en canonical URL
 
 ## Geplande tools (backlog)
-- Budget Planner: "Wat hou ik over per maand na vaste lasten?"
-- Abonnementen-check: Wat geef ik maandelijks uit aan digitale diensten?
 - Vaste Lasten Trend: Houd maandelijks je totale kosten bij
 
 ## IndexNow (Bing/Yandex snelle indexering)

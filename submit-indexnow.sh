@@ -16,6 +16,8 @@ curl -s -o /dev/null -w "HTTP %{http_code}\n" \
       "https://maandlastcheck.nl/tools/studielast-calculator.html",
       "https://maandlastcheck.nl/tools/huur-vs-koop-calculator.html",
       "https://maandlastcheck.nl/tools/lening-check.html",
-      "https://maandlastcheck.nl/tools/koopkracht-calculator.html"
+      "https://maandlastcheck.nl/tools/koopkracht-calculator.html",
+      "https://maandlastcheck.nl/tools/budget-planner.html",
+      "https://maandlastcheck.nl/tools/abonnementen-check.html"
     ]
   }'
