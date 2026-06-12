@@ -56,7 +56,7 @@ function renderSankey() {
   const ns = 'http://www.w3.org/2000/svg';
   const inkomen = parseFloat(document.getElementById('inkomen')?.value) || 0;
 
-  svgEl.innerHTML = '';
+  while (svgEl.firstChild) svgEl.removeChild(svgEl.firstChild);
 
   if (inkomen <= 0) {
     const t = document.createElementNS(ns, 'text');

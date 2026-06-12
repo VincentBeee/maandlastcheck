@@ -61,6 +61,14 @@
         <p class="tool-page__subtitle">Wat hou je over aan het einde van de maand? Vul je inkomsten en uitgaven in en zie direct je financiële ruimte.</p>
       </div>
 
+      <!-- Sankey diagram -->
+      <div style="margin:24px 0 32px;">
+        <p style="color:var(--text-muted);font-size:0.8rem;margin:0 0 10px;text-align:center;letter-spacing:0.03em;text-transform:uppercase;font-weight:500;">Budget sankey diagram — live bijgewerkt</p>
+        <div style="overflow-x:auto;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px 12px 8px;">
+          <svg id="sankey-svg" viewBox="0 0 800 380" style="width:100%;min-width:460px;display:block;"></svg>
+        </div>
+      </div>
+
       <!-- Ad slot top -->
       <div class="ad-slot" style="padding: 0 0 24px 0; justify-content: flex-start;">
         <!-- ADVERTENTIE -->
@@ -250,25 +258,22 @@
 
       </div><!-- /tool-layout -->
 
-      <!-- Sankey diagram -->
-      <div style="margin:36px 0 0;">
-        <h2 style="font-family:var(--font-display);font-size:1.5rem;color:var(--text);margin:0 0 6px;">Uitgavenflow</h2>
-        <p style="color:var(--text-muted);font-size:0.875rem;margin:0 0 16px;">Hoe verdeelt jouw inkomen zich over de uitgavencategorieën?</p>
-        <div style="overflow-x:auto;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px 16px 12px;">
-          <svg id="sankey-svg" viewBox="0 0 800 380" style="width:100%;min-width:460px;display:block;"></svg>
-        </div>
-      </div>
-
       <!-- SEO content -->
       <div class="tool-info">
         <h2>Hoeveel moet je overhouden per maand?</h2>
         <p>Financieel adviseurs hanteren als vuistregel dat je minimaal <strong>10% van je netto inkomen</strong> vrij besteedbaar houdt — als buffer voor onverwachte kosten en als ruimte voor plezier. Wie 20% of meer overhoudt, heeft ook ruimte voor vermogensopbouw via extra spaargeld of beleggingen.</p>
+
+        <h3>Budget sankey diagram: zo lees je de uitgavenflow</h3>
+        <p>Het <strong>sankey diagram</strong> bovenaan deze pagina visualiseert hoe je maandinkomen verdeeld wordt over de uitgavencategorieën. Brede stromen staan voor hoge uitgaven, smalle voor lage. Het groene blok links is je totale inkomen; de gekleurde blokken rechts zijn de categorieën. Past de brede "Wonen"-stroom groter dan de helft van je inkomen? Dan is dat een signaal om je woonlasten kritisch te bekijken — bijvoorbeeld door je hypotheek over te sluiten via de <a href="/tools/lening-check.html">Lening-Check</a>.</p>
 
         <h3>De 50/30/20-regel als leidraad</h3>
         <p>Een populaire budgetregel is de <strong>50/30/20-methode</strong>: besteed maximaal 50% van je netto inkomen aan vaste lasten (wonen, energie, verzekeringen), maximaal 30% aan variabele wensen (uit eten, hobby's, kleding) en spaar minimaal 20%. Voor veel Nederlanders met een gemiddeld inkomen en hoge huurprijzen is de 50%-grens voor wonen al snel bereikt.</p>
 
         <h3>Vaste vs. variabele lasten</h3>
         <p><strong>Vaste lasten</strong> zijn maandelijks gelijk: huur/hypotheek, energiecontract, zorgpremie, abonnementen. <strong>Variabele lasten</strong> schommelen: boodschappen, brandstof, uit eten. Door vaste lasten zo laag mogelijk te houden creëer je automatisch meer flexibiliteit in je budget.</p>
+
+        <h3>Hypotheek en rente als grootste kostenpost</h3>
+        <p>Voor huiseigenaren is de hypotheek doorgaans de dikste stroom in het sankey diagram. Bereken je exacte hypotheekmaandlast en actuele rentestanden op <a href="https://www.rentepermaand.nl" target="_blank" rel="noopener">rentepermaand.nl</a> — inclusief een spaardoelcalculator om te bepalen hoeveel eigen inbreng je nodig hebt. Wil je weten wat je maximaal kunt lenen? Gebruik ook onze <a href="/tools/maximale-hypotheek-calculator.html">maximale hypotheek calculator</a>.</p>
 
         <h3>Besparen op abonnementen</h3>
         <p>Digitale abonnementen stapelen zich op. Nederlanders hebben gemiddeld 3–5 streaming-diensten naast telefoon en internet. Gebruik de <a href="/tools/abonnementen-check.html">Abonnementen-check</a> om precies te zien wat je maandelijks uitgeeft aan digitale diensten en welke je misschien kunt opzeggen.</p>
